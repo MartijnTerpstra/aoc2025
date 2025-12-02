@@ -2,7 +2,9 @@
 #include "test_data.hpp"
 #include <algorithm>
 #include <array>
+#include <cstdio>
 #include <span>
+#include <stdexcept>
 #include <string_view>
 
 consteval size_t lineCount(std::string_view text)

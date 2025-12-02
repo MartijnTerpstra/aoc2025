@@ -11,7 +11,8 @@ macro(add_advent DAY)
     target_compile_features("day_${DAY}"
         PUBLIC cxx_std_23)
     target_compile_options("day_${DAY}"
-        PUBLIC -fconstexpr-steps=111271242)
+        PUBLIC -fconstexpr-steps=1112712420)
 endmacro(add_advent)
 
 add_advent(01)
+add_advent(02)
