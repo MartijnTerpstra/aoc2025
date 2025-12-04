@@ -16,3 +16,4 @@ endmacro(add_advent)
 
 add_advent(01)
 add_advent(02)
+add_advent(03)
