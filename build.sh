@@ -25,13 +25,11 @@ else
     BUILD_TYPE="Debug";
 fi
 
-if [ ! -d "$CURR_DIR/build" ]; then
-    mkdir "build";
-elif [ $REBUILD ]; then
+if [ -d "$CURR_DIR/build" ]; then
     rm -rf "build";
-    mkdir "build";
 fi
 
+mkdir "build";
 cd build;
 trap _cleanup EXIT;
 
