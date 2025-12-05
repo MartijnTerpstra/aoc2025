@@ -25,18 +25,16 @@ else
     BUILD_TYPE="Debug";
 fi
 
-if [ ! -d "$CURR_DIR/build" ]; then
-    mkdir "build";
-elif [ $REBUILD ]; then
+if [ -d "$CURR_DIR/build" ]; then
     rm -rf "build";
-    mkdir "build";
 fi
 
+mkdir "build";
 cd build;
 trap _cleanup EXIT;
 
 echo "Building cmake target"
-cmake $CURR_DIR -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+cmake $CURR_DIR -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE
 
 echo "Building advent day $1"
 cmake --build . --config $BUILD_TYPE --target $ADVENT_DAY
